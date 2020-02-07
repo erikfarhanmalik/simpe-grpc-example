@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.baeldung.grpc;
+
+message DecodeTokenRequest {
+    string encodedToken = 1;
+}
+
+message DecodeTokenResponse {
+    string decodedToken = 1;
+}
+
+service SecurityService {
+    rpc decode(DecodeTokenRequest) returns (DecodeTokenResponse);
+}
